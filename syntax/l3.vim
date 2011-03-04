@@ -13,8 +13,8 @@ syn match l3Comment ";.*"
 
 syn region l3List matchgroup=Delimiter start="(" end=")" contains=ALL
 
-syn match l3Identifier	"[-|!%&*+./:<=>?^_~"[:alpha:]][-|!%&*+./:<=>?^_~"[:alnum:]]*"
-syn keyword l3Syntax and begin defrec def fun let let* letrec not or 
+syn match l3Identifier	"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*"
+syn keyword l3Syntax and begin defrec def fun let* letrec let not or rec
 syn keyword l3CondSyntax cond if
 syn match l3Primitive "@\%(function?\|block?\|block-tag\|block-length\|block-get\|block-set!\|int?\|+\|-\|*\|/\|%\|<=\|<\|=\|!=\|>=\|>\|char-read\|char-print\|bool?\|not\|unit?\)"
 syn match l3Primitive "@block-alloc-\%(\d\|\d\d\|1\d\d\|2[0-4]\d\|25[0-5]\)"
