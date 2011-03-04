@@ -11,8 +11,6 @@ syn match l3Error "[^[:space:]]"
 
 syn match l3Comment ";.*" contains=@Spell
 
-syn region l3List matchgroup=Delimiter start="(" end=")" contains=ALL
-
 syn match l3Identifier	"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" contained
 
 syn keyword l3Syntax		and		contained
@@ -58,6 +56,11 @@ syn match l3String	!"[^\r"]*"!	contained contains=@Spell
 syn match l3Character	"'.'"		contained
 syn match l3Boolean	"#[tf]"		contained
 syn match l3Unit	"#u"		contained
+
+syn cluster l3Statements contains=l3Syntax,l3CondSyntax
+syn cluster l3Constants contains=l3Number,l3String,l3Character,l3Boolean,l3Unit
+
+syn region l3List matchgroup=Delimiter start="(" end=")" contains=l3List,@l3Statements,@l3Constants,l3Identifier,l3Primitive,l3Comment
 
 hi def link l3Error		Error
 hi def link l3Comment		Comment
