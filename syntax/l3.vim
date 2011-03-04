@@ -9,7 +9,8 @@ endif
 
 syn match l3Error "[^[:space:]]"
 
-syn match l3Comment ";.*" contains=@Spell
+syn keyword l3Todo TODO contained
+syn match l3Comment ";.*" contains=@Spell,l3Todo
 
 syn match l3Identifier	"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" contained
 
@@ -64,6 +65,7 @@ syn region l3List matchgroup=Delimiter start="(" end=")" contains=l3List,@l3Stat
 
 hi def link l3Error		Error
 hi def link l3Comment		Comment
+hi def link l3Todo		Todo
 
 hi def link l3Syntax		Statement
 hi def link l3CondSyntax	Conditional
