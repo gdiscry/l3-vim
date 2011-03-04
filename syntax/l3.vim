@@ -14,11 +14,44 @@ syn match l3Comment ";.*"
 syn region l3List matchgroup=Delimiter start="(" end=")" contains=ALL
 
 syn match l3Identifier	"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*"
-syn keyword l3Syntax and begin defrec def fun let* letrec let not or rec
-syn keyword l3CondSyntax cond if
-syn match l3Primitive "@\%(function?\|block?\|block-tag\|block-length\|block-get\|block-set!\|int?\|+\|-\|*\|/\|%\|<=\|<\|=\|!=\|>=\|>\|char-read\|char-print\|bool?\|not\|unit?\)"
-syn match l3Primitive "@block-alloc-\%(\d\|\d\d\|1\d\d\|2[0-4]\d\|25[0-5]\)"
 
+syn keyword l3Syntax		and
+syn keyword l3Syntax		begin
+syn keyword l3Syntax		defrec
+syn keyword l3Syntax		def
+syn keyword l3Syntax		fun
+syn keyword l3Syntax		let*
+syn keyword l3Syntax		letrec
+syn keyword l3Syntax		let
+syn keyword l3Syntax		not
+syn keyword l3Syntax		or
+syn keyword l3Syntax		rec
+syn keyword l3CondSyntax	cond
+syn keyword l3CondSyntax	if
+syn keyword l3Primitive		@function?
+syn keyword l3Primitive		@block?
+syn keyword l3Primitive		@block-tag
+syn keyword l3Primitive		@block-length
+syn keyword l3Primitive		@block-get
+syn keyword l3Primitive		@block-set!
+syn keyword l3Primitive		@int?
+syn keyword l3Primitive		@+
+syn keyword l3Primitive		@-
+syn keyword l3Primitive		@*
+syn keyword l3Primitive		@/
+syn keyword l3Primitive		@%
+syn keyword l3Primitive		@<=
+syn keyword l3Primitive		@<
+syn keyword l3Primitive		@=
+syn keyword l3Primitive		@!=
+syn keyword l3Primitive		@>=
+syn keyword l3Primitive		@>
+syn keyword l3Primitive		@char-read
+syn keyword l3Primitive		@char-print
+syn keyword l3Primitive		@bool?
+syn keyword l3Primitive		@not
+syn keyword l3Primitive		@unit?
+syn match l3Primitive		"@block-alloc-\%(\d\|\d\d\|1\d\d\|2[0-4]\d\|25[0-5]\)"
 
 syn match l3Number	"-\?\d\+"
 syn match l3String	!"[^\r"]*"!
