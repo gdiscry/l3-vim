@@ -9,7 +9,7 @@ endif
 
 syn match l3Error ")"
 
-syn match l3Comment ";.*"
+syn match l3Comment ";.*" contains=@Spell
 
 syn region l3List matchgroup=Delimiter start="(" end=")" contains=ALL
 
@@ -54,7 +54,7 @@ syn keyword l3Primitive		@unit?
 syn match l3Primitive		"@block-alloc-\%(\d\|\d\d\|1\d\d\|2[0-4]\d\|25[0-5]\)"
 
 syn match l3Number	"-\?\d\+"
-syn match l3String	!"[^\r"]*"!
+syn match l3String	!"[^\r"]*"! contains=@Spell
 syn match l3Character	"'.'"
 syn match l3Boolean	"#[tf]"
 syn match l3Unit	"#u"
