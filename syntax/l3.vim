@@ -7,57 +7,57 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn match l3Error ")"
+syn match l3Error "[^[:space:]]"
 
 syn match l3Comment ";.*" contains=@Spell
 
 syn region l3List matchgroup=Delimiter start="(" end=")" contains=ALL
 
-syn match l3Identifier	"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*"
+syn match l3Identifier	"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" contained
 
-syn keyword l3Syntax		and
-syn keyword l3Syntax		begin
-syn keyword l3Syntax		defrec
-syn keyword l3Syntax		def
-syn keyword l3Syntax		fun
-syn keyword l3Syntax		let*
-syn keyword l3Syntax		letrec
-syn keyword l3Syntax		let
-syn keyword l3Syntax		not
-syn keyword l3Syntax		or
-syn keyword l3Syntax		rec
-syn keyword l3CondSyntax	cond
-syn keyword l3CondSyntax	if
-syn keyword l3Primitive		@function?
-syn keyword l3Primitive		@block?
-syn keyword l3Primitive		@block-tag
-syn keyword l3Primitive		@block-length
-syn keyword l3Primitive		@block-get
-syn keyword l3Primitive		@block-set!
-syn keyword l3Primitive		@int?
-syn keyword l3Primitive		@+
-syn keyword l3Primitive		@-
-syn keyword l3Primitive		@*
-syn keyword l3Primitive		@/
-syn keyword l3Primitive		@%
-syn keyword l3Primitive		@<=
-syn keyword l3Primitive		@<
-syn keyword l3Primitive		@=
-syn keyword l3Primitive		@!=
-syn keyword l3Primitive		@>=
-syn keyword l3Primitive		@>
-syn keyword l3Primitive		@char-read
-syn keyword l3Primitive		@char-print
-syn keyword l3Primitive		@bool?
-syn keyword l3Primitive		@not
-syn keyword l3Primitive		@unit?
-syn match l3Primitive		"@block-alloc-\%(\d\|\d\d\|1\d\d\|2[0-4]\d\|25[0-5]\)"
+syn keyword l3Syntax		and		contained
+syn keyword l3Syntax		begin		contained
+syn keyword l3Syntax		defrec		contained
+syn keyword l3Syntax		def		contained
+syn keyword l3Syntax		fun		contained
+syn keyword l3Syntax		let*		contained
+syn keyword l3Syntax		letrec		contained
+syn keyword l3Syntax		let		contained
+syn keyword l3Syntax		not		contained
+syn keyword l3Syntax		or		contained
+syn keyword l3Syntax		rec		contained
+syn keyword l3CondSyntax	cond		contained
+syn keyword l3CondSyntax	if		contained
+syn keyword l3Primitive		@function?	contained
+syn keyword l3Primitive		@block?		contained
+syn keyword l3Primitive		@block-tag	contained
+syn keyword l3Primitive		@block-length	contained
+syn keyword l3Primitive		@block-get	contained
+syn keyword l3Primitive		@block-set!	contained
+syn keyword l3Primitive		@int?		contained
+syn keyword l3Primitive		@+		contained
+syn keyword l3Primitive		@-		contained
+syn keyword l3Primitive		@*		contained
+syn keyword l3Primitive		@/		contained
+syn keyword l3Primitive		@%		contained
+syn keyword l3Primitive		@<=		contained
+syn keyword l3Primitive		@<		contained
+syn keyword l3Primitive		@=		contained
+syn keyword l3Primitive		@!=		contained
+syn keyword l3Primitive		@>=		contained
+syn keyword l3Primitive		@>		contained
+syn keyword l3Primitive		@char-read	contained
+syn keyword l3Primitive		@char-print	contained
+syn keyword l3Primitive		@bool?		contained
+syn keyword l3Primitive		@not		contained
+syn keyword l3Primitive		@unit?		contained
+syn match l3Primitive		"@block-alloc-\%(\d\|\d\d\|1\d\d\|2[0-4]\d\|25[0-5]\)" contained
 
-syn match l3Number	"-\?\d\+"
-syn match l3String	!"[^\r"]*"! contains=@Spell
-syn match l3Character	"'.'"
-syn match l3Boolean	"#[tf]"
-syn match l3Unit	"#u"
+syn match l3Number	"-\?\d\+"	contained
+syn match l3String	!"[^\r"]*"!	contained contains=@Spell
+syn match l3Character	"'.'"		contained
+syn match l3Boolean	"#[tf]"		contained
+syn match l3Unit	"#u"		contained
 
 hi def link l3Error		Error
 hi def link l3Comment		Comment
