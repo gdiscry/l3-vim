@@ -50,16 +50,16 @@ syn keyword l3Primitive		@not		contained skipwhite skipempty nextgroup=l3Body
 syn keyword l3Primitive		@unit?		contained skipwhite skipempty nextgroup=l3Body
 syn match l3Primitive		"@block-alloc-\%(\d\|\d\d\|1\d\d\|2[0-4]\d\|25[0-5]\)" contained skipwhite skipempty nextgroup=l3Body
 
-syn match l3Identifier		"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" contained
+syn match l3Identifier		"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" 
 syn match l3Function		"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" contained skipwhite skipempty nextgroup=l3Body
 syn match l3BindingName 	"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" contained skipwhite skipempty nextgroup=@l3Expression
 syn match l3RecName 		"[-|!%&*+./:<=>?^_~[:alpha:]][-|!%&*+./:<=>?^_~[:alnum:]]*" contained skipwhite skipempty nextgroup=l3BindingList
 
-syn match l3Number		"-\?\d\+"	contained
-syn match l3String		!"[^\r"]*"!	contained contains=@Spell
-syn match l3Character		"'.'"		contained
-syn match l3Boolean		"#[tf]"		contained
-syn match l3Unit		"#u"		contained
+syn match l3Number		"-\?\d\+"	
+syn match l3String		!"[^\r"]*"!	contains=@Spell
+syn match l3Character		"'.'"		
+syn match l3Boolean		"#[tf]"		
+syn match l3Unit		"#u"		
 
 syn cluster l3Statement		contains=l3Statement,l3Conditional
 syn cluster l3Callable		contains=l3Primitive,l3Function
