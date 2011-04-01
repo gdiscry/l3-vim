@@ -7,12 +7,11 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn match	l3WordError		"[^[:space:]()]\+"
-syn region	l3ParenError		matchgroup=Error start="(" end=")" contained contains=l3ParenError,l3WordError
+syn match	l3WordError		"[^[:space:]()]\+" skipwhite skipempty nextgroup=@l3Error
+syn keyword	l3DefError		defrec		contained skipwhite skipempty nextgroup=@l3Error
+syn keyword	l3DefError		def		contained skipwhite skipempty nextgroup=@l3Error
+syn region	l3ParenError		matchgroup=Error start="(" end=")" contained contains=l3ParenError,l3WordError skipwhite skipempty nextgroup=@l3Error
 syn cluster	l3Error			contains=l3WordError,l3ParenError
-
-syn keyword	l3DefError		defrec contained
-syn keyword	l3DefError		def contained
 
 syn keyword	l3Todo			TODO contained containedin=l3Comment
 syn match	l3Comment		";.*" contains=@Spell,l3Todo
