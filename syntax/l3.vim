@@ -97,9 +97,9 @@ hi link		l3Conditional		Conditional
 hi link		l3Function		Function
 hi link		l3Primitive		Function
 hi link		l3BindingName		Identifier
-hi link		l3FunBindingName	Identifier
+hi link		l3FunBindingName	Function
 hi link		l3RecName		Identifier
-hi link		l3Identifier		Identifier
+hi link		l3Identifier		NONE
         	
 hi link		l3Number		Number
 hi link		l3Character		Character
